@@ -1,0 +1,16 @@
+[Unit]
+Description=Alienware AW-ELC lighting presets on the macro keys
+
+[Service]
+ExecStart=/usr/local/bin/alienfx-elc daemon
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=3
+ProtectSystem=strict
+ProtectHome=yes
+PrivateNetwork=yes
+PrivateTmp=yes
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target

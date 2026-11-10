@@ -1,0 +1,48 @@
+# Presets for the Alienware 15 R4 lighting.
+#
+# Zones: alien_head, wordmark, touchpad, power_button, keyboard_right,
+# keyboard_center_right, keyboard_center_left, keyboard_left, macro_keys,
+# base_left, base_right, lid_left, lid_right.
+# Groups: keyboard (the four keyboard zones and the macro keys), strips, all.
+#
+# Zones a preset leaves out are off, except power_button: unless a preset
+# names it, the firmware keeps it in its own colour.
+#
+# Types:
+#   static  one look
+#   steps   each press of its key moves to the next look, wrapping around
+#   auto    the look lights up on typing and goes off after `timeout` seconds
+#
+# After editing: sudo systemctl reload alienfx-elc
+
+keyboard = "AT Translated Set 2 keyboard"
+startup = "default"
+
+[keys]
+macro_preset_cycle = "default"   # the unnumbered key above macro 1
+macro1 = "night"
+macro2 = "brightness"
+macro3 = "auto"
+# macro4 = ""
+# macro5 = ""
+
+[presets.default]
+type = "static"
+
+[presets.night]
+type = "static"
+zones = { keyboard = "606060" }
+
+[presets.brightness]
+type = "steps"
+steps = [
+    { keyboard = "404040" },
+    { keyboard = "808080" },
+    { keyboard = "c0c0c0" },
+    { keyboard = "ffffff" },
+]
+
+[presets.auto]
+type = "auto"
+timeout = 10
+zones = { keyboard = "606060" }

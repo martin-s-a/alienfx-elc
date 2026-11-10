@@ -1,0 +1,7 @@
+#!/usr/bin/python3 -I
+import sys
+
+sys.path.insert(0, "/usr/local/lib/alienfx-elc")
+from alienfx_elc.cli import main
+
+sys.exit(main())

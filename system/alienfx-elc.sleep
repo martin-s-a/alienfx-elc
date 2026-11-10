@@ -1,0 +1,6 @@
+#!/bin/sh
+# systemd-sleep hook: the controller may forget the look while suspended.
+case "$1" in
+    post) systemctl reload --no-block alienfx-elc.service ;;
+esac
+exit 0

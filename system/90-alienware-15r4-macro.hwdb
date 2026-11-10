@@ -1,0 +1,3 @@
+# The unnumbered macro key above macro 1 sends scancode 0x91, which has no keycode.
+evdev:atkbd:dmi:*:svnAlienware:pnAlienware15R4:*
+ KEYBOARD_KEY_91=macro_preset_cycle
